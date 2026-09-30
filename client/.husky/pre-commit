@@ -1,1 +1,16 @@
-npm test
+#!/bin/sh
+npx lint-staged || {
+    echo "❌❌ Lint-staged Check Failed' ❌❌ ";
+        false;
+}
+
+npm run build ||
+(
+    echo '❌👷🔨❌ Better call Uncle Bob... Because your build failed ❌👷🔨❌
+          Next build failed: View the errors above to see why.
+    '
+    false;
+)
+
+# If everything passes... Now we can commit
+echo '✅✅✅✅ You win this time... I am committing this now. ✅✅✅✅'
