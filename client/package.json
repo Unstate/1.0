@@ -11,8 +11,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepare": "husky",
-    "format": "npx prettier --write .",
-    "preapare": "husky"
+    "format": "npx prettier --write ."
   },
   "dependencies": {
     "react": "^19.2.8",
@@ -35,6 +34,7 @@
     "@vitest/browser-playwright": "latest",
     "@vitest/coverage-v8": "latest",
     "babel-plugin-react-compiler": "^1.0.0",
+    "husky": "^9.1.7",
     "lint-staged": "^17.6.0",
     "oxlint": "^1.81.0",
     "playwright": "latest",
