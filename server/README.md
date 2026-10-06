@@ -9,7 +9,7 @@ Use Node.js 22.12+ (Node 24 recommended) and PostgreSQL. Run commands from `serv
 1. Install packages: `npm ci`.
 2. Copy `.env.example` to `.env` and set `DATABASE_URL` to your database credentials. The sample credentials are placeholders; this project does not create a PostgreSQL user or database.
 3. Create an empty PostgreSQL database and a user that can create tables in it, using your preferred PostgreSQL tools.
-4. Run `npm run db:setup` to create the books table and insert five sample books.
+4. Run `npm run db:setup` to create the books table and insert 25 sample books.
 5. Run `npm run start:dev`.
 
 The API listens on `http://localhost:3000`. `PORT` overrides the port; `CORS_ORIGIN` defaults to the Vite frontend at `http://localhost:5173`.
@@ -42,7 +42,7 @@ Returns books sorted by title, then ID. `page` is between 1 and 1,000,000; `limi
 }
 ```
 
-The example is abbreviated; the seeded database returns five books at the default limit. Page counts are illustrative and vary by edition. `coverUrl` is nullable so the frontend can supply a placeholder.
+The example is abbreviated; the seeded database contains 25 books and returns the first 20 at the default limit. Page counts are illustrative and vary by edition. `coverUrl` is nullable so the frontend can supply a placeholder.
 
 ### GET /books/:id
 
@@ -69,7 +69,7 @@ DATABASE_URL=postgresql://user:password@localhost:5432/books_test npm run db:set
 TEST_DATABASE_URL=postgresql://user:password@localhost:5432/books_test npm test
 ```
 
-The integration test expects the five seed books and exercises real SQL, sorting, pagination, detail lookup, and error responses. It only reads the test database.
+The integration test expects the 25 seed books and exercises real SQL, sorting, pagination, detail lookup, and error responses. It only reads the test database.
 
 ## Structure
 
