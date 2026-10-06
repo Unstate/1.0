@@ -1,6 +1,0 @@
-- [ X ] refactror folder structure (to can have a back-end side)
-- [ X ] add configuration for storybook & test`s & oxlint & prettier & husky & lint-staged
-- [ ] add basic ci for formatting checks, linting type, checking and build
-- [ ] write skill for automated code-review
-- [ ] add docker configuration
-- [ ] vibe-code back-end

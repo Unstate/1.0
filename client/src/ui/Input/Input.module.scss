@@ -1,0 +1,25 @@
+.field {
+  display: grid;
+  gap: 8px;
+}
+.label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.input {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid #605b53;
+  border-radius: 0;
+  background: $color-background;
+  color: $color-text;
+  &::placeholder {
+    color: $color-muted;
+  }
+  &:disabled {
+    opacity: 0.5;
+  }
+}

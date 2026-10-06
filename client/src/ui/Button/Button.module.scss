@@ -1,0 +1,46 @@
+.base {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.75rem 1.25rem;
+  border: 2px solid $color-accent;
+  border-radius: 0;
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 $color-text;
+  &:focus-visible {
+    outline: 3px solid $color-text;
+    outline-offset: 6px;
+  }
+  &:active:not(:disabled) {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 $color-text;
+  }
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+}
+.primary {
+  background: $color-accent;
+  color: $color-background;
+  &:hover:not(:disabled) {
+    background: #ffa66b;
+  }
+}
+.secondary {
+  background: transparent;
+  color: $color-accent;
+  &:hover:not(:disabled) {
+    background: $color-surface;
+  }
+}

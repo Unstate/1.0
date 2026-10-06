@@ -1,0 +1,36 @@
+@include reset;
+
+:root {
+  color-scheme: dark;
+  font-family: $font-mono;
+  background: $color-background;
+  color: $color-text;
+  font-synthesis: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  min-width: 320px;
+  line-height: 1.5;
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+a {
+  color: inherit;
+}
+::selection {
+  background: $color-accent;
+  color: $color-background;
+}
+:focus-visible {
+  outline: 3px solid $color-accent;
+  outline-offset: 5px;
+}

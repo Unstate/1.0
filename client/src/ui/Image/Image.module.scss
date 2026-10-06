@@ -1,0 +1,11 @@
+.image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.cover {
+  object-fit: cover;
+}
+.contain {
+  object-fit: contain;
+}

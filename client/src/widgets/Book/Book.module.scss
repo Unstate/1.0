@@ -1,0 +1,52 @@
+.book {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr);
+  gap: 24px;
+  padding-block: 24px;
+  border-bottom: 1px solid #45423d;
+  @media (min-width: $width-tablet) {
+    grid-template-columns: 144px minmax(0, 1fr);
+    gap: 32px;
+  }
+}
+.cover {
+  min-height: 168px;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px;
+  border: 1px solid $color-accent;
+  background: #201a15;
+  color: $color-accent;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+}
+.coverLabel {
+  font-size: 8px;
+  letter-spacing: 0.05em;
+}
+.coverTitle {
+  font-size: 1rem;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+.coverYear {
+  font-size: 0.75rem;
+  border-top: 1px solid $color-accent;
+  padding-top: 8px;
+}
+.content {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-width: 0;
+}
+.description {
+  margin-block: 4px 8px;
+  font-size: 0.875rem;
+  color: #d6d0c5;
+}

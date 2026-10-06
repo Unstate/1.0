@@ -1,0 +1,33 @@
+.base {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.p {
+  @include text-p;
+}
+.h1 {
+  @include text-h1;
+  letter-spacing: -0.05em;
+}
+.h2 {
+  @include text-h2;
+  letter-spacing: -0.04em;
+}
+.h3 {
+  @include text-h3;
+}
+.caption {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.default {
+  color: inherit;
+}
+.muted {
+  color: $color-muted;
+}
+.accent {
+  color: $color-accent;
+}

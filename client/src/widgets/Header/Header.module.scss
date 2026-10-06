@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding-block: 16px 28px;
+  border-bottom: 1px solid #45423d;
+}
+.brand {
+  text-decoration: none;
+  span {
+    color: $color-accent;
+  }
+}

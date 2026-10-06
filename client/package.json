@@ -10,10 +10,15 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "prepare": "husky",
-    "format": "npx prettier --write ."
+    "prepare": "cd .. && husky client/.husky",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run lint && npm run format:check && npm run build && npm test"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
@@ -44,15 +49,5 @@
     "typescript": "~6.0.2",
     "vite": "^8.3.0",
     "vitest": "latest"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,json,css,md,scss}": [
-      "npm run format"
-    ]
   }
 }

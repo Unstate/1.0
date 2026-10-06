@@ -1,0 +1,6 @@
+.section {
+  padding-block: 24px;
+  @media (min-width: $width-tablet) {
+    padding-block: 40px;
+  }
+}

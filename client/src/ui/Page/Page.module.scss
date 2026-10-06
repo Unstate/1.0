@@ -1,0 +1,13 @@
+.page {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: $width-desktop-wide;
+  margin-inline: auto;
+  padding: 24px 16px;
+  @media (min-width: $width-tablet) {
+    padding: 32px;
+  }
+  @media (min-width: $width-desktop) {
+    padding: 48px;
+  }
+}

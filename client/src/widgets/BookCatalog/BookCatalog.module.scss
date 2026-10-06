@@ -1,0 +1,32 @@
+.layout {
+  display: grid;
+  align-items: start;
+  gap: 32px;
+  padding-block: 32px;
+  @media (min-width: $width-laptop) {
+    grid-template-columns: 280px minmax(0, 1fr);
+    gap: 48px;
+  }
+}
+.results {
+  min-width: 0;
+}
+.heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-block: 0 20px;
+  border-bottom: 1px solid $color-accent;
+}
+.list {
+  list-style: none;
+  padding: 0;
+}
+.message {
+  display: grid;
+  justify-items: start;
+  gap: 24px;
+  padding-block: 48px;
+}

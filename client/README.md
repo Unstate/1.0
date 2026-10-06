@@ -1,24 +1,20 @@
-To Do:
-- docker & docker-compose
-- testing & storybook 
-	- testing strategies
-	- approaches to development
-- linux
-	- packages installing
-	- nginx
-	- deployment to own vps
+## Book catalogue
 
-What i want to do: 2 projects, one of them is UI-kit and other is some project with back-end
+- `ui/`: reusable primitives; no book-domain or HTTP logic.
+- `widgets/`: Header, Book, BookFilters, BookCatalog with stories and tests.
+- `api/instance.ts`: HTTP wrapper; `api/books.ts`: book response validation and pagination.
+- `types/`: API/domain types and UI/widget props.
+- `hooks/useBooks.ts`: loading, retry and request cancellation.
+- `utils/filterBooks.ts`: pure search/filter logic.
 
-What i get:
-- ui-kit for create future projects covered with tests & storybook and deployed to vps for use it in microfrontends
-- some project with back-end
-- skills 
-	- deployment to own vps
-	- creating and configuring docker & docker compose files
-	- writing tests
-	- ci/cd
-	- a little bit of nginx
-- skills for AI
+The small catalogue is loaded from all API pages and filtered locally. Selected genres are combined with OR; search and the 300-page filter are combined with AND. Stories use fixtures; the application never substitutes fixture data for a failed API request.
 
-Project`s stack: React, Vite, Tanstack Router, Tanstack Query, TypeScript, Nest JS, PostgreSQL, Docker, Docker Compose, Nginx, Prettier, Eslint, Commitlint, Husky, Lint-staged, Codex, React-testing-library, Storybook, Cypress?, Playwright?
+For Vite development, from the repository root start PostgreSQL, setup and API:
+
+```sh
+docker compose -p anstate-dev -f compose.yaml -f compose.dev.yaml up --build -d --wait backend
+```
+
+Then run `npm run dev` from `client`. Vite proxies `/api` to `http://127.0.0.1:3000`; override `API_PROXY_TARGET` when using a different backend address. The development override exposes the API only on loopback. Production keeps using Nginx and the original Compose file.
+
+The seed now contains 25 books. Existing databases get the additional books when setup is re-run; original records are not overwritten. To update an already-running local stack, rebuild the setup image and run `docker compose -p anstate-dev -f compose.yaml -f compose.dev.yaml run --build --rm db-setup`. Page counts are illustrative and depend on edition.

@@ -1,0 +1,20 @@
+.filters {
+  display: grid;
+  align-content: start;
+  gap: 24px;
+  padding: 24px;
+  border: 1px solid #45423d;
+  background: $color-surface;
+}
+.group {
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  legend {
+    margin-bottom: 8px;
+    color: $color-muted;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+}
